@@ -12,13 +12,11 @@ require_once("inc/wp/create-post-types.php");
 function gridworks_scripts() {
 
 	// CSS
-	wp_enqueue_style( 'gridworks-style', get_template_directory_uri() . '/app/css/style.css' );
-
-  // Vendors
-  wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/app/vendors/slick/slick/slick.css' );
+  wp_enqueue_style( 'gw-plugins', get_template_directory_uri() . '/dist/css/plugins.css' );
+	wp_enqueue_style( 'gw-css', get_template_directory_uri() . '/dist/css/style.css' );
 
 	// JS
-  wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/app/vendors/slick/slick/slick.min.js', array(), false , true );
+  wp_enqueue_script( 'gw-js', get_template_directory_uri() . '/dist/js/main.js', array(), false , true );
 }
 
 // Inicia Estilos
