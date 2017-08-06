@@ -8,6 +8,7 @@
 // Requires
 
 require_once("inc/wp/create-post-types.php");
+require_once("inc/wp/create-fields.php");
 
 function gridworks_scripts() {
 
@@ -41,3 +42,23 @@ $menuParameters = array(
 // Theme Supports
 
 add_theme_support('menus');
+add_theme_support( 'post-thumbnails' ); 
+
+// Add SVG support
+
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+add_theme_support( 'custom-logo' );
+
+function wpb_custom_new_menu() {
+  register_nav_menus(
+    array(
+      'navbar-menu' => __( 'Navbar (Menu Principal)' )
+    )
+  );
+}
+add_action( 'init', 'wpb_custom_new_menu' );
