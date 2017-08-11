@@ -24,7 +24,10 @@ var js = [
     './vendors/wow/dist/wow.min.js',
     './js/main.js',
     './js/*.js',
-    'vendors/owl.carousel/dist/owl.carousel.min.js'
+    './vendors/owl.carousel/dist/owl.carousel.min.js',
+    './vendors/fullpage.js/dist/jquery.fullpage.min.js',
+    './vendors/fullpage.js/vendors/scrolloverflow.min.js',
+    './vendors/aos/dist/aos.js'
 ];
 
 gulp.task('uglify', function(){
