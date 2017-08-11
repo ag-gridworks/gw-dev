@@ -1,0 +1,127 @@
+$mobile: max-width 440px
+$tablet: max-width 991px
+
+=absolute($t: none, $r: none, $b: none, $l:none)
+    position: absolute
+    top: $t
+    bottom: $b
+    left: $l
+    right: $r
+
+=center-flex
+    display: flex
+    align-items: center
+    //justify-content: center
+
+=center
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-right: -50%
+    transform: translate(-50%, -50%)
+
+=clearfix
+    &:after
+        content: ""
+        display: table
+        clear: both
+
+=shadow-1
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+
+=shadow-2
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+
+=shadow-3
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+
+=shadow-4
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+
+=shadow-5
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+
+
+=make($md, $sm, $xs)
+    +make-xs-column($xs)
+    +make-sm-column($sm)
+    +make-md-column($md)
+
+=make-offset($md, $sm, $xs)
+    +make-xs-column-offset($xs)
+    +make-sm-column-offset($sm)
+    +make-md-column-offset($md)
+
+=xs($xs)
+    +make-md-column($xs)
+
+=sm($sm)
+    +make-md-column($sm)
+
+=md($md)
+    +make-md-column($md)
+
+=md-off($md)
+    +make-md-column-offset($md)
+
+=background($size, $position, $repeat, $origin: initial)
+    background:
+        size: $size !important
+        position: $position !important
+        repeat: $repeat !important
+        origin: $origin !important
+
+=flexbox
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flexbox
+    display: flex
+
+=gradient($angle,$gradient1, $gradient2)
+    background-color: $gradient2 
+    background-image: -webkit-gradient(linear, $angle, from($gradient1), to($gradient2))
+    background-image: -webkit-linear-gradient($angle, $gradient1, $gradient2)
+    background-image:    -moz-linear-gradient($angle, $gradient1, $gradient2)
+    background-image:     -ms-linear-gradient($angle, $gradient1, $gradient2)
+    background-image:      -o-linear-gradient($angle, $gradient1, $gradient2)
+    background-image:         linear-gradient($angle, $gradient1, $gradient2)
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=$angle,StartColorStr='#{$gradient1}', EndColorStr='#{$gradient2}')
+
+/* ======== Outros */
+
+
+=transition($transition...) 
+    -moz-transition:    all $transition ease-in-out
+    -o-transition:      all $transition ease-in-out
+    -webkit-transition: all $transition ease-in-out
+    transition:         all $transition ease-in-out
+
+=border-radius($radius) 
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    -ms-border-radius: $radius
+    border-radius: $radius
+
+@function calculateRem($size) 
+    $remSize: $size / 16px
+    @return $remSize * 1rem
+
+=font-size($size) 
+    font-size: $size
+    font-size: calculateRem($size)
+
+=opacity($opacity) 
+    opacity: $opacity
+    $opacity-ie: $opacity * 100
+    filter: alpha(opacity=$opacity-ie)
+
+/* ======== Background Color Opacity */
+=background-opacity($color: #000, $opacity: 0.85) 
+    background: $color
+    background: rgba($color, $opacity)
+
+/* ======== Columns */
+=columns($count: 3, $gap: 10) 
+    @include css3-prefix('column-count', $count)
+    @include css3-prefix('column-gap', $gap)

@@ -1,15 +1,7 @@
-<div class="go-navbar">
-	<div class="inner">
-		<div class="logo">
-			<?php the_custom_logo(); ?>
-		</div>
+<header class="go-header" role="banner">
 
-		<?php
-		wp_nav_menu( array( 
-			'theme_location' => 'navbar-menu', 
-			'container_class' => 'wp_float_right' ) ); 
-			?>
+	<nav class="go-navbar" role="navigation">
+			<?php gw_nav(); ?>
+	</nav>
 
-		</div>
-	</div>
-
+</header>
