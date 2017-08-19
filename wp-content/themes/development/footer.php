@@ -1,4 +1,6 @@
+<footer>
 <?php wp_footer() ?>
+</footer>
 
 <!-- analytics -->
 <?php $ua = 'YOUR_UA' ?>

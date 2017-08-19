@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?> class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>

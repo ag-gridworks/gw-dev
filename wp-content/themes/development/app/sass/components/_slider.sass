@@ -1,18 +1,23 @@
+$slider-height: 60vh
+
 .go-slider
+	z-index: 1
+	height: $slider-height
 	background-color: $color-1
-	&-item
-		+background(cover, center center, no-repeat)
-		height: 60vh
-		opacity: .2
-	.inner
-		+make(10,10,10)
-		+make-offset(1,1,1)
-		margin-left: 0 !important
-		text-align: center
-		+center
+	+flex
+	+background
+	align-items: center
+	text-align: center
+	.filter
+		z-index: 2
+		height: $slider-height
+		width: 100%
+		position: absolute
+		top: 0
+		left: 0
+		background-color: $color-1
+		opacity: .6
+	&-inner
+		z-index: 3
 		color: #fff
-		.title
-			+font-size(39px)
-	&-image
-		img
-			width: 100%
+		padding: 60px

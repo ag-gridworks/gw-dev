@@ -8,17 +8,10 @@ $tablet: max-width 991px
     left: $l
     right: $r
 
-=center-flex
+=center
     display: flex
     align-items: center
-    //justify-content: center
-
-=center
-    position: absolute
-    top: 50%
-    left: 50%
-    margin-right: -50%
-    transform: translate(-50%, -50%)
+    justify-content: center
 
 =clearfix
     &:after
@@ -64,14 +57,14 @@ $tablet: max-width 991px
 =md-off($md)
     +make-md-column-offset($md)
 
-=background($size, $position, $repeat, $origin: initial)
+=background($size: cover, $position: center center, $repeat: no-repeat, $origin: initial)
     background:
-        size: $size !important
-        position: $position !important
-        repeat: $repeat !important
-        origin: $origin !important
+        size: $size
+        position: $position
+        repeat: $repeat
+        origin: $origin
 
-=flexbox
+=flex
     display: -webkit-box
     display: -webkit-flex
     display: -moz-flex

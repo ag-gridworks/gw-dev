@@ -8,22 +8,23 @@ $args = array(
 <?php $the_query = new WP_Query( $args ); ?>
 
 <?php if ( $the_query->have_posts() ) : ?>
-	<div class="owl-carousel owl-slider go-slider">
+	<section class="owl-carousel owl-slider owl-theme go-slider">
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-		<div class="item">
-		<div class="go-slider-item" 
-		style="
-		background: url('<?php the_field('slider_image') ?>');
-		opacity: <?php if(!(get_field('html_text'))): echo "1"; endif ?>
-		">
-		</div>
-		
-			<div class="inner">
+		<article class="go-slider item"
+			style="
+			background-image: url('<?php the_field('slider_image') ?>');
+			">
+			
+			<?php if((get_field('html_text'))):?>
+				<div class="filter"></div>"
+			<?php endif ?>
+			
+			<div class="go-slider-inner">
 				<?php if(get_field('html_text')): ?>
-				<div class="title">
+				<h1 class="title">
 					<?php the_field('slider_title') ?>
-				</div>
+				</h1>
 
 				<div class="text">
 					<?php the_field('slider_text') ?>
@@ -31,7 +32,7 @@ $args = array(
 				<?php endif ?>
 			</div>
 
-		</div>
+		</article>
 	<?php endwhile; ?>
-	</div>
+	</section>
 <?php endif; ?>
