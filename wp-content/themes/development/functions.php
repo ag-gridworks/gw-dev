@@ -10,6 +10,7 @@
 \*------------------------------------*/
 require_once("inc/wp/create-post-types.php");
 require_once("inc/wp/create-fields.php");
+require_once("inc/wp/remove-emojis.php");
 /*------------------------------------*\
     Enqueue
 \*------------------------------------*/
