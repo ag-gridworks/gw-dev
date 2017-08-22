@@ -25,6 +25,7 @@
     "owl.carousel": "^2.2.1",
     "wow": "^1.1.2",
     "aos": "^2.2.0",
-    "fullpage.js": "^2.9.4"
+    "fullpage.js": "^2.9.4",
+    "css-hamburgers": "^0.9.1"
   }
 }
