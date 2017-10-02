@@ -1,0 +1,59 @@
+.go-navbar
+	margin: 0 2%
+	height: 60px
+	padding-left: 2%
+	display: flex
+	align-items: center
+	.this-logo
+		float: left
+		font-weight: $bold
+		font-size: 20px
+	.this-nav-toggle
+		position: fixed
+		right: 3%
+		top: 10px
+		//background-color: #fff
+		// border-radius: 50%
+		z-index: 9997
+		//+shadow-1
+
+.hamburger
+	padding: 10px
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+	width: 30px
+	height: 3px
+
+.hamburger-box
+	width: 30px
+	height: 21px
+
+.is-active
+	.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+			background-color: #fff
+
+.overlay-navigation
+	display: none
+	height: 100%
+	width: 100%
+	position: fixed
+	top: 0
+	left: 0
+	+gradient(-45deg, rgba(20, 63, 204, 0.88), $color-2)
+	z-index: 1000
+	nav
+		height: 100%
+		ul
+			list-style-type: none
+			display: flex
+			flex-direction: column;
+			height: 100%
+			padding: 0
+			justify-content: center
+			align-items: center
+			li
+				margin: 7px 0px
+				a
+					color: #fff
+					+font-size(30px)
+					font-weight: $bold

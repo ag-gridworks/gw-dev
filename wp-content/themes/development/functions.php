@@ -10,13 +10,12 @@
 \*------------------------------------*/
 require_once("inc/wp/create-post-types.php");
 require_once("inc/wp/create-fields.php");
-require_once("inc/wp/remove-emojis.php");
+require_once("inc/wp/remove-styles.php");
 /*------------------------------------*\
     Enqueue
 \*------------------------------------*/
 function gw_scripts() {
-  wp_enqueue_style( 'gw-plugins', get_template_directory_uri() . '/dist/css/plugins.css' );
-  wp_enqueue_style( 'gw-css', get_template_directory_uri() . '/dist/css/style.css' );
+  wp_enqueue_style( 'gw-css', get_template_directory_uri() . '/dist/css/main.css' );
   wp_enqueue_script( 'gw-js', get_template_directory_uri() . '/dist/js/main.js', array(), false , true );
 }
 /*------------------------------------*\
@@ -50,10 +49,10 @@ function gw_nav() {
     array(
         'theme_location'  => 'header-menu',
         'menu'            => '',
-        'container'       => 'div',
+        'container'       => 'nav',
         'container_class' => 'menu-{menu slug}-container',
         'container_id'    => '',
-        'menu_class'      => 'menu',
+        'menu_class'      => '',
         'menu_id'         => '',
         'echo'            => true,
         'fallback_cb'     => 'wp_page_menu',
@@ -86,6 +85,7 @@ function gw_pagination() {
         'total' => $wp_query->max_num_pages
     ));
 }
+
 /*------------------------------------*\
     Theme Actions
 \*------------------------------------*/

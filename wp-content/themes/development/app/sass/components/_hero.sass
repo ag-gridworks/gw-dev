@@ -1,0 +1,27 @@
+.go-hero-container
+	padding-top: 0
+	.go-hero
+		color: #fff
+		background-color: #000
+		padding: 9%
+		display: flex
+		align-items: center
+		height: 100vh
+		+background
+		.this-inner
+			.this-welcome
+				margin-bottom: 45px
+				span
+					font-weight: $bold
+			.this-title
+				+font-size(70px)
+				font-weight: $black
+				line-height: 1
+				margin: 0
+				+breakpoint($tablet)
+					+font-size(40px)
+			.this-subtitle
+				+font-size(27px)
+				font-weight: $light
+			.this-options
+				margin: 45px 0px
